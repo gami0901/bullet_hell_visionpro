@@ -223,7 +223,7 @@ document.getElementById('toggle-overlay-button').addEventListener('click', funct
 document.getElementById('start-button').addEventListener('click', toggleGameStatus);
 
 document.getElementById('game-area').addEventListener('mousedown', onGameAreaClick);
-//document.getElementById('game-area').addEventListener('touchstart', onGameAreaClick);
+document.getElementById('game-area').addEventListener('touchstart', onGameAreaClick);
 
 
 document.addEventListener('mousemove', function(event) {
