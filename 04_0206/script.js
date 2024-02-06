@@ -223,6 +223,8 @@ document.getElementById('toggle-overlay-button').addEventListener('click', funct
 document.getElementById('start-button').addEventListener('click', toggleGameStatus);
 
 document.getElementById('game-area').addEventListener('mousedown', onGameAreaClick);
+document.getElementById('game-area').addEventListener('touchstart', onGameAreaClick);
+
 
 document.addEventListener('mousemove', function(event) {
   if (!event.target.closest('#game-area')) {
@@ -234,7 +236,22 @@ document.addEventListener('mousemove', function(event) {
   }
 }, { passive: false});
 
+document.addEventListener('touchmove', function(event) {
+  if (!event.target.closest('#game-area')) {
+    // gameArea外での操作の場合は、ページのスクロールを防止
+    event.preventDefault();
+  }
+  if (isDragging) {
+    currentX = event.clientX;
+  }
+}, { passive: false});
+
+
 document.addEventListener('mouseup', function() {
+  isDragging = false;
+});
+
+document.addEventListener('touchend', function() {
   isDragging = false;
 });
 
