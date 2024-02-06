@@ -145,8 +145,20 @@ function onGameAreaClick(event) {
   circle.classList.add('circle');
 
   // 円の位置を計算（クリックされた位置から左上に半径分オフセット）
-  const circleX = event.clientX - gameAreaRect.left - shine_radius;
-  const circleY = event.clientY - gameAreaRect.top - shine_radius;
+  let clientX, clientY;
+
+  if (event.type === 'mousedown'){
+    // マウスイベントの場合
+    clientX = event.clientX;
+    clientY = event.clientY;
+  } else if (event.type === 'touchstart') {
+    // タッチイベントの場合
+    clientX = event.touches[0].clientX;
+    clientY = event.touches[0].clientY;
+  }
+
+  const circleX = clientX - gameAreaRect.left - shine_radius;
+  const circleY = clientY - gameAreaRect.top - shine_radius;
   
   circle.style.left = `${circleX}px`;
   circle.style.top = `${circleY}px`;
