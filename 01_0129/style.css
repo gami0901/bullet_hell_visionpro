@@ -1,0 +1,60 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#game-area {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: black;
+  border: 1px solid gray;
+  position: relative; /* このプロパティが重要です */
+  z-index: 1;
+  overflow: hidden; /* 範囲外の内容を非表示にする */
+}
+
+#horizontal-line {
+  position: absolute;
+  z-index: 3;
+  top: 89.5%; /* ゲームエリアの中央に配置 */
+  left: 0;
+  width: 100%; /* ゲームエリアの幅いっぱいに広げる */
+  height: 2px; /* 直線の太さ */
+  background-color: white; /* 直線の色 */
+}
+
+#player-character {
+  position: absolute;
+  z-index: 3;
+  width: 60px; /* 半径30pxのため、直径は60px */
+  height: 60px;
+  background-color: white;
+  border-radius: 50%; /* 円形にする */
+  border: 1px solid black; /* 枠線をつけて円を目立たせる */
+}
+
+#start-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.circle {
+  position: absolute;
+  z-index: 4;
+  width: 200px; /* 半径60pxなので直径は120px */
+  height: 200px;
+  background-color: darkgray;
+  border-radius: 50%; /* 円形にする */
+}
+
+.bullet {
+  position: absolute;
+  z-index: 2;
+  width: 30px; /* 半径15pxなので直径は30px */
+  height: 30px;
+  background-color: red;
+  border-radius: 50%; /* 円形にする */
+}
