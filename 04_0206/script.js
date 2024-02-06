@@ -236,7 +236,7 @@ document.addEventListener('mousemove', function(event) {
   }
 }, { passive: false});
 
-document.addEventListener('touchmove', function(event) {
+/*document.addEventListener('touchmove', function(event) {
   if (!event.target.closest('#game-area')) {
     // gameArea外での操作の場合は、ページのスクロールを防止
     event.preventDefault();
@@ -244,7 +244,7 @@ document.addEventListener('touchmove', function(event) {
   if (isDragging) {
     currentX = event.clientX;
   }
-}, { passive: false});
+}, { passive: false});*/
 
 
 document.addEventListener('mouseup', function() {
