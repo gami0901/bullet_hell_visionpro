@@ -174,8 +174,8 @@ function onGameAreaClick(event) {
 
   /* ---- svgの更新 ---- */
   const layCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  const layX = event.clientX - gameAreaRect.left;
-  const layY = event.clientY - gameAreaRect.top;
+  const layX = clientX - gameAreaRect.left;
+  const layY = clientY - gameAreaRect.top;
   layCircle.setAttribute(`cx`, layX);
   layCircle.setAttribute(`cy`, layY);
   layCircle.setAttribute(`r`, lay_radius);
@@ -189,8 +189,8 @@ function onGameAreaClick(event) {
 
   /* ---- ドラッグのためのフラグおよびアニメーション関数の開始 ---- */
   isDragging = true;
-  lastX = event.clientX;
-  currentX = event.clientX;
+  lastX = clientX;
+  currentX = clientX;
   event.preventDefault();
   requestAnimationFrame(updateDrag);
 
