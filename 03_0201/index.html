@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullet Hell in Darkness for Vision Pro </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg width="0" height="0">
+        <defs>
+            <mask id="circle-hole">
+                <rect width="600" height="600" fill="white"/>
+            </mask>
+        </defs>
+    </svg>
+    <div id="game-area">
+        <div id="game-overlay"></div>
+        <div id="horizontal-line"></div>
+        <div id="player-character"></div>
+    </div>
+    <div id="button-container">
+        <button id="start-button">Game Start</button>
+        <button id="toggle-overlay-button">Hide</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

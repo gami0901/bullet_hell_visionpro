@@ -1,0 +1,87 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#game-area {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid gray;
+  position: relative; /* このプロパティが重要です */
+  z-index: 1;
+  overflow: hidden; /* 範囲外の内容を非表示にする */
+}
+
+#horizontal-line {
+  position: absolute;
+  z-index: 5;
+  top: 89.5%;
+  left: 0;
+  width: 100%; /* ゲームエリアの幅いっぱいに広げる */
+  height: 1.9px; /* 直線の太さ */
+  background-color: red; /* 直線の色 */
+}
+
+#player-character {
+  position: absolute;
+  z-index: 5;
+  width: 60px; /* 半径30pxのため、直径は60px */
+  height: 60px;
+  background-color: white;
+  border-radius: 50%; /* 円形にする */
+  border: 1px solid black; /* 枠線をつけて円を目立たせる */
+}
+
+#button-container {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  margin: 20px auto;
+}
+
+
+#start-button,
+#toggle-overlay-button {
+  width: 200px; /* 希望する幅 */
+  height: 50px; /* 希望する高さ */
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+#square-with-hole {
+  background-color: black; /* 背景色 */
+  position: absolute;
+  z-index: 5
+}
+
+#game-overlay {
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    mask: url(#circle-hole); /* SVGマスクを適用 */
+    z-index: 4;
+    display: none; /* 初期状態は非表示 */
+}
+
+.circle {
+  position: absolute;
+  z-index: 3;
+  width: 60px; /* 半径60pxなので直径は120px */
+  height: 60px;
+  background-color: darkgray;
+  border-radius: 50%; /* 円形にする */
+}
+
+.bullet {
+  position: absolute;
+  z-index: 2;
+  width: 30px; /* 半径15pxなので直径は30px */
+  height: 30px;
+  background-color: red;
+  border-radius: 50%; /* 円形にする */
+}
