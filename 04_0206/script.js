@@ -239,31 +239,27 @@ document.getElementById('game-area').addEventListener('touchstart', onGameAreaCl
 
 
 document.addEventListener('mousemove', function(event) {
+  if (isDragging) {
+    currentX = event.clientX;
+  }
+});
+
+document.addEventListener('touchmove', function(event) {
   if (!event.target.closest('#game-area')) {
     // gameArea外での操作の場合は、ページのスクロールを防止
     event.preventDefault();
   }
   if (isDragging) {
-    currentX = event.clientX;
+    currentX = event.touches[0].clientX;
   }
 }, { passive: false});
-
-/*document.addEventListener('touchmove', function(event) {
-  if (!event.target.closest('#game-area')) {
-    // gameArea外での操作の場合は、ページのスクロールを防止
-    event.preventDefault();
-  }
-  if (isDragging) {
-    currentX = event.clientX;
-  }
-}, { passive: false});*/
 
 
 document.addEventListener('mouseup', function() {
   isDragging = false;
 });
 
-//document.addEventListener('touchend', function() {
-//  isDragging = false;
-//});
+document.addEventListener('touchend', function() {
+  isDragging = false;
+});
 
