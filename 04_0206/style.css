@@ -57,15 +57,16 @@ body {
 }
 
 #game-overlay {
-     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    mask: url(#circle-hole); /* SVGマスクを適用 */
-    z-index: 4;
-    display: none; /* 初期状態は非表示 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-mask: url(#circle-hole);
+  mask: url(#circle-hole); /* SVGマスクを適用 */
+  z-index: 4;
+  display: none; /* 初期状態は非表示 */
 }
 
 .circle {
