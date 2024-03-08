@@ -2,11 +2,15 @@ body {
   text-align: center;
   font-family: Arial, sans-serif;
 }
+#game-area-container {
+  position: relative; /* コンテナに対する相対位置指定 */
+  width: fit-content; /* 子要素の幅に合わせる */
+  margin: 0 auto; /* 中央揃え */
+}
 
 #game-area {
   width: 600px;
   height: 600px;
-  margin: 0 auto;
   position: relative; /* このプロパティが重要です */
   z-index: 5;
   overflow: hidden; /* 範囲外の内容を非表示にする */
@@ -83,4 +87,24 @@ body {
   height: 30px;
   background-color: red;
   border-radius: 50%; /* 円形にする */
+}
+
+.enemy {
+  position: absolute;
+  width: 60px; /* 敵キャラクターの幅 */
+  height: 60px; /* 敵キャラクターの高さ */
+  background-color: white; /* 敵キャラクターの色 */
+  border: 1px solid black;
+}
+
+#game-time {
+  position: absolute;
+  left: 100%; /* game-areaの右端から配置 */
+  top: 0px; /* game-areaの上端に揃える */
+  color: black;
+  font-size: 20px;
+  z-index: 10;
+  white-space: nowrap; /* 改行させない */
+  transform: translateX(20px); /* ゲームエリアの右端から少し離す */
+  text-align: left; /* テキストを左寄せに */
 }
