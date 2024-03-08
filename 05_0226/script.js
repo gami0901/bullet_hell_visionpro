@@ -292,7 +292,7 @@ function onGameAreaClick(event) {
    newCircle.setAttribute("cx", circleX);
    newCircle.setAttribute("cy", circleY);
    newCircle.setAttribute("r", shine_radius);
-   newCircle.setAttribute("fill", "white");
+   newCircle.setAttribute("fill", "black");
       
    // mask要素に新しいcircleを追加
    mask.appendChild(newCircle);
@@ -386,17 +386,15 @@ document.getElementById('toggle-overlay-button').addEventListener('click', funct
   const mask = document.querySelector('mask');
   let rect = document.querySelector('mask > rect');
 
-  if (rect.getAttribute('fill') === 'white') {
+  if (rect) {
     // rectが存在するとき、rectを消去する
-    //rect.setAttribute('width', '600');
-    //rect.setAttribute('height', '600');
-    rect.setAttribute('fill', 'black');
+    mask.removeChild(rect);
     button.textContent = 'Show';
   } else {
     // rectが存在しないとき、rectを作る
-    //rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    //rect.setAttribute('width', '600');
-    //rect.setAttribute('height', '600');
+    rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('width', '600');
+    rect.setAttribute('height', '600');
     rect.setAttribute('fill', 'white');
     mask.appendChild(rect);
     button.textContent = 'Hide';
