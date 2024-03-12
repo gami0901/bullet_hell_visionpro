@@ -70,7 +70,9 @@ body {
   left: 0px;
   width: 600px;
   height: 600px;
-  background-color: yellow;
+  background-color: yellowgreen;
+  -webkit-mask: url('#circle-mask');
+  mask: url('#circle-mask');
   z-index: 3;
 }
 
