@@ -76,8 +76,6 @@ body {
   width: 600px;
   height: 600px;
   background-color: white;
-  -webkit-mask: url('#circle-mask');
-  mask: url('#circle-mask');
   z-index: 3;
 }
 

@@ -292,7 +292,7 @@ function onGameAreaClick(event) {
    newCircle.setAttribute("cx", circleX);
    newCircle.setAttribute("cy", circleY);
    newCircle.setAttribute("r", shine_radius);
-   newCircle.setAttribute("fill", "black");
+   newCircle.setAttribute("fill", "white");
       
    // mask要素に新しいcircleを追加
    mask.appendChild(newCircle);
@@ -395,7 +395,7 @@ document.getElementById('toggle-overlay-button').addEventListener('click', funct
     rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     rect.setAttribute('width', '600');
     rect.setAttribute('height', '600');
-    rect.setAttribute('fill', 'black');
+    rect.setAttribute('fill', 'white');
     mask.appendChild(rect);
     button.textContent = 'Hide';
   }
