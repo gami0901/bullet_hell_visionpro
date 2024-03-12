@@ -21,7 +21,7 @@ body {
   width: 600px;
   height: 600px;
   margin: 0 auto;
-  background-color: black;
+  background-color: white;
   position: relative; /* このプロパティが重要です */
   z-index: 1;
   overflow: hidden; /* 範囲外の内容を非表示にする */
