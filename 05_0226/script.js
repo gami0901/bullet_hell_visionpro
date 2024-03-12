@@ -395,7 +395,7 @@ document.getElementById('toggle-overlay-button').addEventListener('click', funct
     rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     rect.setAttribute('width', '600');
     rect.setAttribute('height', '600');
-    rect.setAttribute('fill', 'white');
+    rect.setAttribute('fill', 'black');
     mask.appendChild(rect);
     button.textContent = 'Hide';
   }
